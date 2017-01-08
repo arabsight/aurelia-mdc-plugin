@@ -1,0 +1,9 @@
+{
+    "extends": "./node_modules/aurelia-tools/.eslintrc.json",
+    "rules": {
+        "indent": [
+            1,
+            4
+        ]
+    }
+}
