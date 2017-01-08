@@ -9,7 +9,7 @@
         "material design"
     ],
     "scripts": {
-        "prepush": "gulp prepare-release",
+        "prepush": "gulp prepare-release --bump=patch",
         "push": "git add --all && git commit -m \"$(date)\" && git push origin master && npm publish",
         "test": "gulp test"
     },
