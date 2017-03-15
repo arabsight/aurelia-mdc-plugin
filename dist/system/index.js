@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['./config', './mdc-target'], function (_export, _context) {
+System.register(['aurelia-pal', './config', './mdc-target'], function (_export, _context) {
     "use strict";
 
-    var MdcConfig, MDC_TARGET_ATTR, MDC_INIT_ATTR, pluginConfig;
+    var PLATFORM, MdcConfig, MDC_TARGET_ATTR, MDC_INIT_ATTR, pluginConfig;
     function configure(config, callback) {
         pluginConfig = config.container.get(MdcConfig);
 
@@ -11,7 +11,7 @@ System.register(['./config', './mdc-target'], function (_export, _context) {
             callback(pluginConfig);
         }
 
-        config.globalResources('./mdc-target');
+        config.globalResources(PLATFORM.moduleName('./mdc-target'));
 
         if (pluginConfig.autoInitMode === true) {
             config.aurelia.resources.registerViewEngineHooks({
@@ -33,7 +33,9 @@ System.register(['./config', './mdc-target'], function (_export, _context) {
         }
     }
     return {
-        setters: [function (_config) {
+        setters: [function (_aureliaPal) {
+            PLATFORM = _aureliaPal.PLATFORM;
+        }, function (_config) {
             MdcConfig = _config.MdcConfig;
             MDC_TARGET_ATTR = _config.MDC_TARGET_ATTR;
             MDC_INIT_ATTR = _config.MDC_INIT_ATTR;

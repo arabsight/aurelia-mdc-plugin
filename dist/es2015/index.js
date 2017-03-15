@@ -1,3 +1,4 @@
+import { PLATFORM } from 'aurelia-pal';
 import { MdcConfig, MDC_TARGET_ATTR, MDC_INIT_ATTR } from './config';
 
 export * from './mdc-target';
@@ -11,7 +12,7 @@ export function configure(config, callback) {
         callback(pluginConfig);
     }
 
-    config.globalResources('./mdc-target');
+    config.globalResources(PLATFORM.moduleName('./mdc-target'));
 
     if (pluginConfig.autoInitMode === true) {
         config.aurelia.resources.registerViewEngineHooks({

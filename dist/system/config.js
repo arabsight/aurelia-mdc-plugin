@@ -55,7 +55,9 @@ System.register([], function (_export, _context) {
                 'mdc-radio': 'MDCRadio',
                 'mdc-snackbar': 'MDCSnackbar',
                 'mdc-simple-menu': 'MDCSimpleMenu',
-                'mdc-select': 'MDCSelect'
+                'mdc-select': 'MDCSelect',
+                'mdc-form-field': 'MDCFormField',
+                'mdc-grid-list': 'MDCGridList'
             };
 
             _export('MdcConfig', MdcConfig = function () {

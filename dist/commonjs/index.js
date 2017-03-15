@@ -17,6 +17,8 @@ Object.keys(_mdcTarget).forEach(function (key) {
 });
 exports.configure = configure;
 
+var _aureliaPal = require('aurelia-pal');
+
 var _config = require('./config');
 
 var pluginConfig = void 0;
@@ -28,7 +30,7 @@ function configure(config, callback) {
         callback(pluginConfig);
     }
 
-    config.globalResources('./mdc-target');
+    config.globalResources(_aureliaPal.PLATFORM.moduleName('./mdc-target'));
 
     if (pluginConfig.autoInitMode === true) {
         config.aurelia.resources.registerViewEngineHooks({

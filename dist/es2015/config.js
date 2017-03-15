@@ -10,7 +10,9 @@ let MDC_COMPONENTS = {
     'mdc-radio': 'MDCRadio',
     'mdc-snackbar': 'MDCSnackbar',
     'mdc-simple-menu': 'MDCSimpleMenu',
-    'mdc-select': 'MDCSelect'
+    'mdc-select': 'MDCSelect',
+    'mdc-form-field': 'MDCFormField',
+    'mdc-grid-list': 'MDCGridList'
 };
 
 export let MdcConfig = class MdcConfig {

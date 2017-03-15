@@ -1,4 +1,4 @@
-define(['exports', './mdc-target', './config'], function (exports, _mdcTarget, _config) {
+define(['exports', './mdc-target', 'aurelia-pal', './config'], function (exports, _mdcTarget, _aureliaPal, _config) {
     'use strict';
 
     Object.defineProperty(exports, "__esModule", {
@@ -25,7 +25,7 @@ define(['exports', './mdc-target', './config'], function (exports, _mdcTarget, _
             callback(pluginConfig);
         }
 
-        config.globalResources('./mdc-target');
+        config.globalResources(_aureliaPal.PLATFORM.moduleName('./mdc-target'));
 
         if (pluginConfig.autoInitMode === true) {
             config.aurelia.resources.registerViewEngineHooks({
