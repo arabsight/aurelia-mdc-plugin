@@ -1,5 +1,4 @@
 let path = require('path');
-// let paths = require('./paths');
 
 exports.base = function() {
     return {
@@ -7,17 +6,14 @@ exports.base = function() {
         filenameRelative: '',
         sourceMap: true,
         sourceRoot: '',
-        moduleRoot: path.resolve('src')
-            .replace(/\\/g, '/'),
+        moduleRoot: path.resolve('src').replace(/\\/g, '/'),
         moduleIds: false,
         comments: false,
         compact: false,
         code: true,
-        presets: ['es2015-loose', 'stage-1'],
+        presets: [['es2015', { loose: true }], 'stage-1'],
         plugins: [
-            'syntax-flow',
-            'transform-decorators-legacy',
-            'transform-flow-strip-types'
+            'transform-decorators-legacy'
         ]
     };
 };
