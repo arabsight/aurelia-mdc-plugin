@@ -24,7 +24,8 @@ var MDC_COMPONENTS = {
     'mdc-simple-menu': 'MDCSimpleMenu',
     'mdc-select': 'MDCSelect',
     'mdc-form-field': 'MDCFormField',
-    'mdc-grid-list': 'MDCGridList'
+    'mdc-grid-list': 'MDCGridList',
+    'mdc-dialog': 'MDCDialog'
 };
 
 var MdcConfig = exports.MdcConfig = function () {

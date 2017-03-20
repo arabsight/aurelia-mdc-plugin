@@ -57,7 +57,8 @@ System.register([], function (_export, _context) {
                 'mdc-simple-menu': 'MDCSimpleMenu',
                 'mdc-select': 'MDCSelect',
                 'mdc-form-field': 'MDCFormField',
-                'mdc-grid-list': 'MDCGridList'
+                'mdc-grid-list': 'MDCGridList',
+                'mdc-dialog': 'MDCDialog'
             };
 
             _export('MdcConfig', MdcConfig = function () {
