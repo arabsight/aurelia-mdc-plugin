@@ -14,12 +14,10 @@ export function configure(config, callback) {
 
     config.globalResources(PLATFORM.moduleName('./mdc-target'));
 
-    if (pluginConfig.autoInitMode === true) {
-        config.aurelia.resources
-                .registerViewEngineHooks({
-                    beforeCompile: beforeViewCompiled
-                });
-    }
+    config.aurelia.resources
+        .registerViewEngineHooks({
+            beforeCompile: beforeViewCompiled
+        });
 }
 
 function beforeViewCompiled(content) {
@@ -29,6 +27,6 @@ function beforeViewCompiled(content) {
     for (let i = 0; i < elements.length; i++) {
         let item = elements.item(i);
         item.setAttribute(MDC_TARGET_ATTR, '');
-        item.setAttribute(MDC_INIT_ATTR, pluginConfig.componentName(item));
+        item.setAttribute(MDC_INIT_ATTR, pluginConfig.getComponentName(item));
     }
 }
