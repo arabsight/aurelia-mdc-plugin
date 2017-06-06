@@ -6,25 +6,6 @@ define(['exports', 'material-components-web', 'aurelia-framework', './config'], 
     });
     exports.MdcTarget = undefined;
 
-    var mdc = _interopRequireWildcard(_materialComponentsWeb);
-
-    function _interopRequireWildcard(obj) {
-        if (obj && obj.__esModule) {
-            return obj;
-        } else {
-            var newObj = {};
-
-            if (obj != null) {
-                for (var key in obj) {
-                    if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];
-                }
-            }
-
-            newObj.default = obj;
-            return newObj;
-        }
-    }
-
     function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) {
             throw new TypeError("Cannot call a class as a function");
@@ -44,13 +25,13 @@ define(['exports', 'material-components-web', 'aurelia-framework', './config'], 
         MdcTarget.prototype.attached = function attached() {
             var _this = this;
 
-            if (!this.config.autoInitMode && !this.config.mdcClasses.some(function (cls) {
+            if (!this.config.mdcClasses.some(function (cls) {
                 return _this.element.classList.contains(cls);
             })) {
                 return;
             }
 
-            mdc.autoInit(this.element.parentNode, function () {});
+            (0, _materialComponentsWeb.autoInit)(this.element.parentNode, function () {});
         };
 
         return MdcTarget;

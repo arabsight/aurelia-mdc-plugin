@@ -32,11 +32,9 @@ function configure(config, callback) {
 
     config.globalResources(_aureliaPal.PLATFORM.moduleName('./mdc-target'));
 
-    if (pluginConfig.autoInitMode === true) {
-        config.aurelia.resources.registerViewEngineHooks({
-            beforeCompile: beforeViewCompiled
-        });
-    }
+    config.aurelia.resources.registerViewEngineHooks({
+        beforeCompile: beforeViewCompiled
+    });
 }
 
 function beforeViewCompiled(content) {
@@ -46,6 +44,6 @@ function beforeViewCompiled(content) {
     for (var i = 0; i < elements.length; i++) {
         var item = elements.item(i);
         item.setAttribute(_config.MDC_TARGET_ATTR, '');
-        item.setAttribute(_config.MDC_INIT_ATTR, pluginConfig.componentName(item));
+        item.setAttribute(_config.MDC_INIT_ATTR, pluginConfig.getComponentName(item));
     }
 }

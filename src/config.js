@@ -44,7 +44,7 @@ export class MdcConfig {
 
         this.mdcClasses.forEach(selector => {
             if (item.classList.contains(selector)) {
-                return MDC_COMPONENTS[selector];
+                component = MDC_COMPONENTS[selector];
             }
         });
 

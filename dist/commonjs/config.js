@@ -14,37 +14,29 @@ var MDC_TARGET_ATTR = exports.MDC_TARGET_ATTR = 'mdc-target';
 var MDC_INIT_ATTR = exports.MDC_INIT_ATTR = 'data-mdc-auto-init';
 
 var MDC_COMPONENTS = {
-    'mdc-textfield': 'MDCTextfield',
-    'mdc-ripple-surface': 'MDCRipple',
     'mdc-checkbox': 'MDCCheckbox',
+    'mdc-dialog': 'MDCDialog',
+    'mdc-persistent-drawer': 'MDCPersistentDrawer',
     'mdc-temporary-drawer': 'MDCTemporaryDrawer',
+    'mdc-ripple-surface': 'MDCRipple',
+    'mdc-grid-list': 'MDCGridList',
     'mdc-icon-toggle': 'MDCIconToggle',
+    'mdc-linear-progress': 'MDCLinearProgress',
     'mdc-radio': 'MDCRadio',
     'mdc-snackbar': 'MDCSnackbar',
+    'mdc-tab': 'MDCTab',
+    'mdc-tab-bar': 'MDCTabBar',
+    'mdc-textfield': 'MDCTextfield',
     'mdc-simple-menu': 'MDCSimpleMenu',
     'mdc-select': 'MDCSelect',
-    'mdc-form-field': 'MDCFormField',
-    'mdc-grid-list': 'MDCGridList',
-    'mdc-dialog': 'MDCDialog'
+    'mdc-toolbar': 'MDCToolbar',
+    'mdc-form-field': 'MDCFormField'
 };
 
 var MdcConfig = exports.MdcConfig = function () {
     function MdcConfig() {
         _classCallCheck(this, MdcConfig);
-
-        this.autoInitMode = true;
     }
-
-    MdcConfig.prototype.autoInit = function autoInit() {
-        var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
-
-        if (typeof value !== 'boolean') {
-            throw Error('Invalid argument, expected a Boolean');
-        }
-
-        this.autoInitMode = value;
-        return this;
-    };
 
     MdcConfig.prototype.addComponents = function addComponents(items) {
         if ((typeof items === 'undefined' ? 'undefined' : _typeof(items)) !== 'object') {
@@ -55,7 +47,7 @@ var MdcConfig = exports.MdcConfig = function () {
         return this;
     };
 
-    MdcConfig.prototype.componentName = function componentName(item) {
+    MdcConfig.prototype.getComponentName = function getComponentName(item) {
         var component = void 0;
 
         this.mdcClasses.forEach(function (selector) {

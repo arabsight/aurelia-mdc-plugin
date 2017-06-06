@@ -13,11 +13,9 @@ System.register(['aurelia-pal', './config', './mdc-target'], function (_export, 
 
         config.globalResources(PLATFORM.moduleName('./mdc-target'));
 
-        if (pluginConfig.autoInitMode === true) {
-            config.aurelia.resources.registerViewEngineHooks({
-                beforeCompile: beforeViewCompiled
-            });
-        }
+        config.aurelia.resources.registerViewEngineHooks({
+            beforeCompile: beforeViewCompiled
+        });
     }
 
     _export('configure', configure);
@@ -29,7 +27,7 @@ System.register(['aurelia-pal', './config', './mdc-target'], function (_export, 
         for (var i = 0; i < elements.length; i++) {
             var item = elements.item(i);
             item.setAttribute(MDC_TARGET_ATTR, '');
-            item.setAttribute(MDC_INIT_ATTR, pluginConfig.componentName(item));
+            item.setAttribute(MDC_INIT_ATTR, pluginConfig.getComponentName(item));
         }
     }
     return {

@@ -3,7 +3,7 @@
 System.register(['material-components-web', 'aurelia-framework', './config'], function (_export, _context) {
     "use strict";
 
-    var mdc, inject, customAttribute, DOM, MdcConfig, MDC_TARGET_ATTR, _dec, _dec2, _class, MdcTarget;
+    var autoInit, inject, customAttribute, DOM, MdcConfig, MDC_TARGET_ATTR, _dec, _dec2, _class, MdcTarget;
 
     function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) {
@@ -13,7 +13,7 @@ System.register(['material-components-web', 'aurelia-framework', './config'], fu
 
     return {
         setters: [function (_materialComponentsWeb) {
-            mdc = _materialComponentsWeb;
+            autoInit = _materialComponentsWeb.autoInit;
         }, function (_aureliaFramework) {
             inject = _aureliaFramework.inject;
             customAttribute = _aureliaFramework.customAttribute;
@@ -34,13 +34,13 @@ System.register(['material-components-web', 'aurelia-framework', './config'], fu
                 MdcTarget.prototype.attached = function attached() {
                     var _this = this;
 
-                    if (!this.config.autoInitMode && !this.config.mdcClasses.some(function (cls) {
+                    if (!this.config.mdcClasses.some(function (cls) {
                         return _this.element.classList.contains(cls);
                     })) {
                         return;
                     }
 
-                    mdc.autoInit(this.element.parentNode, function () {});
+                    autoInit(this.element.parentNode, function () {});
                 };
 
                 return MdcTarget;
