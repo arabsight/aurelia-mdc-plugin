@@ -1,4 +1,4 @@
-import * as mdc from 'material-components-web';
+import { autoInit } from 'material-components-web';
 import { inject, customAttribute, DOM } from 'aurelia-framework';
 import { MdcConfig, MDC_TARGET_ATTR } from './config';
 
@@ -11,11 +11,10 @@ export class MdcTarget {
     }
 
     attached() {
-        if (!this.config.autoInitMode &&
-            !this.config.mdcClasses.some(cls => this.element.classList.contains(cls))) {
+        if (!this.config.mdcClasses.some(cls => this.element.classList.contains(cls))) {
             return;
         }
 
-        mdc.autoInit(this.element.parentNode, () => {});
+        autoInit(this.element.parentNode, () => {});
     }
 }
