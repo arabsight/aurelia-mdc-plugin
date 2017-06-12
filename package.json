@@ -1,6 +1,6 @@
 {
     "name": "aurelia-mdc-plugin",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "description": "Material Design Components plugin for Aurelia.",
     "keywords": [
         "aurelia",
@@ -9,7 +9,7 @@
         "material design"
     ],
     "scripts": {
-        "prepush": "gulp prepare-release --bump=minor",
+        "prepush": "gulp prepare-release --bump=patch",
         "push": "git add --all && git commit -m \"$(date)\" && git push origin master && npm publish",
         "test": "gulp test"
     },
@@ -37,7 +37,7 @@
         "babel-preset-es2015": "^6.9.0",
         "babel-preset-stage-1": "^6.5.0",
         "conventional-changelog": "1.1.3",
-        "del": "^2.2.1",
+        "del": "^3.0.0",
         "gulp": "^3.9.1",
         "gulp-babel": "^6.1.2",
         "gulp-bump": "^2.2.0",
@@ -51,12 +51,12 @@
         "karma-chrome-launcher": "^2.0.0",
         "karma-coverage": "^1.1.1",
         "karma-jasmine": "^1.0.2",
-        "karma-jspm": "2.2.2",
+        "karma-jspm": "2.2.3",
         "object.assign": "^4.0.4",
         "require-dir": "^0.3.2",
         "run-sequence": "^1.2.2",
         "vinyl-paths": "^2.1.0",
-        "yargs": "^7.0.2"
+        "yargs": "^8.0.1"
     },
     "jspm": {
         "registry": "npm",

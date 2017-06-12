@@ -13,6 +13,8 @@ var _aureliaFramework = require('aurelia-framework');
 
 var _config = require('./config');
 
+var _helpers = require('./helpers');
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var MdcTarget = exports.MdcTarget = (_dec = (0, _aureliaFramework.inject)(_aureliaFramework.DOM.Element, _config.MdcConfig), _dec2 = (0, _aureliaFramework.customAttribute)(_config.MDC_TARGET_ATTR), _dec(_class = _dec2(_class = function () {
@@ -26,13 +28,15 @@ var MdcTarget = exports.MdcTarget = (_dec = (0, _aureliaFramework.inject)(_aurel
     MdcTarget.prototype.attached = function attached() {
         var _this = this;
 
-        if (!this.config.mdcClasses.some(function (cls) {
+        var hasMdcElements = this.config.mdcClasses.some(function (cls) {
             return _this.element.classList.contains(cls);
-        })) {
-            return;
-        }
+        });
+
+        if (!hasMdcElements) return;
 
         (0, _materialComponentsWeb.autoInit)(this.element.parentNode, function () {});
+
+        (0, _helpers.resolveAttachedPromise)();
     };
 
     return MdcTarget;

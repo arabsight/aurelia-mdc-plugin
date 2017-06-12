@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['material-components-web', 'aurelia-framework', './config'], function (_export, _context) {
+System.register(['material-components-web', 'aurelia-framework', './config', './helpers'], function (_export, _context) {
     "use strict";
 
-    var autoInit, inject, customAttribute, DOM, MdcConfig, MDC_TARGET_ATTR, _dec, _dec2, _class, MdcTarget;
+    var autoInit, inject, customAttribute, DOM, MdcConfig, MDC_TARGET_ATTR, resolveAttachedPromise, _dec, _dec2, _class, MdcTarget;
 
     function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) {
@@ -21,6 +21,8 @@ System.register(['material-components-web', 'aurelia-framework', './config'], fu
         }, function (_config) {
             MdcConfig = _config.MdcConfig;
             MDC_TARGET_ATTR = _config.MDC_TARGET_ATTR;
+        }, function (_helpers) {
+            resolveAttachedPromise = _helpers.resolveAttachedPromise;
         }],
         execute: function () {
             _export('MdcTarget', MdcTarget = (_dec = inject(DOM.Element, MdcConfig), _dec2 = customAttribute(MDC_TARGET_ATTR), _dec(_class = _dec2(_class = function () {
@@ -34,13 +36,15 @@ System.register(['material-components-web', 'aurelia-framework', './config'], fu
                 MdcTarget.prototype.attached = function attached() {
                     var _this = this;
 
-                    if (!this.config.mdcClasses.some(function (cls) {
+                    var hasMdcElements = this.config.mdcClasses.some(function (cls) {
                         return _this.element.classList.contains(cls);
-                    })) {
-                        return;
-                    }
+                    });
+
+                    if (!hasMdcElements) return;
 
                     autoInit(this.element.parentNode, function () {});
+
+                    resolveAttachedPromise();
                 };
 
                 return MdcTarget;

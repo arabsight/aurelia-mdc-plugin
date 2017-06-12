@@ -2,6 +2,7 @@ import { PLATFORM } from 'aurelia-pal';
 import { MdcConfig, MDC_TARGET_ATTR, MDC_INIT_ATTR } from './config';
 
 export * from './mdc-target';
+export { ensureAttached } from './helpers';
 
 let pluginConfig;
 
@@ -24,8 +25,9 @@ function beforeViewCompiled(content) {
     if (elements.length === 0) return;
 
     for (let i = 0; i < elements.length; i++) {
-        let item = elements.item(i);
-        item.setAttribute(MDC_TARGET_ATTR, '');
-        item.setAttribute(MDC_INIT_ATTR, pluginConfig.getComponentName(item));
+        const item = elements.item(i);
+        const componentName = pluginConfig.getComponentName(item);
+        item.setAttribute(MDC_TARGET_ATTR, componentName);
+        item.setAttribute(MDC_INIT_ATTR, componentName);
     }
 }

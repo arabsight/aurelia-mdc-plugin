@@ -1,4 +1,4 @@
-define(['exports', 'material-components-web', 'aurelia-framework', './config'], function (exports, _materialComponentsWeb, _aureliaFramework, _config) {
+define(['exports', 'material-components-web', 'aurelia-framework', './config', './helpers'], function (exports, _materialComponentsWeb, _aureliaFramework, _config, _helpers) {
     'use strict';
 
     Object.defineProperty(exports, "__esModule", {
@@ -25,13 +25,15 @@ define(['exports', 'material-components-web', 'aurelia-framework', './config'], 
         MdcTarget.prototype.attached = function attached() {
             var _this = this;
 
-            if (!this.config.mdcClasses.some(function (cls) {
+            var hasMdcElements = this.config.mdcClasses.some(function (cls) {
                 return _this.element.classList.contains(cls);
-            })) {
-                return;
-            }
+            });
+
+            if (!hasMdcElements) return;
 
             (0, _materialComponentsWeb.autoInit)(this.element.parentNode, function () {});
+
+            (0, _helpers.resolveAttachedPromise)();
         };
 
         return MdcTarget;

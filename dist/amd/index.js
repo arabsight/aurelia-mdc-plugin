@@ -1,9 +1,10 @@
-define(['exports', './mdc-target', 'aurelia-pal', './config'], function (exports, _mdcTarget, _aureliaPal, _config) {
+define(['exports', './mdc-target', './helpers', 'aurelia-pal', './config'], function (exports, _mdcTarget, _helpers, _aureliaPal, _config) {
     'use strict';
 
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
+    exports.ensureAttached = undefined;
     Object.keys(_mdcTarget).forEach(function (key) {
         if (key === "default" || key === "__esModule") return;
         Object.defineProperty(exports, key, {
@@ -12,6 +13,12 @@ define(['exports', './mdc-target', 'aurelia-pal', './config'], function (exports
                 return _mdcTarget[key];
             }
         });
+    });
+    Object.defineProperty(exports, 'ensureAttached', {
+        enumerable: true,
+        get: function () {
+            return _helpers.ensureAttached;
+        }
     });
     exports.configure = configure;
 
@@ -38,8 +45,9 @@ define(['exports', './mdc-target', 'aurelia-pal', './config'], function (exports
 
         for (var i = 0; i < elements.length; i++) {
             var item = elements.item(i);
-            item.setAttribute(_config.MDC_TARGET_ATTR, '');
-            item.setAttribute(_config.MDC_INIT_ATTR, pluginConfig.getComponentName(item));
+            var componentName = pluginConfig.getComponentName(item);
+            item.setAttribute(_config.MDC_TARGET_ATTR, componentName);
+            item.setAttribute(_config.MDC_INIT_ATTR, componentName);
         }
     }
 });

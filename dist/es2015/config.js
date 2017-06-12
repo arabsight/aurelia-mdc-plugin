@@ -36,7 +36,7 @@ export let MdcConfig = class MdcConfig {
     }
 
     get mdcSelectors() {
-        return this.mdcClasses.map(selector => `.${ selector }`).join();
+        return this.mdcClasses.map(selector => `.${selector}`).join();
     }
 
     getComponentName(item) {

@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['aurelia-pal', './config', './mdc-target'], function (_export, _context) {
+System.register(['aurelia-pal', './config', './mdc-target', './helpers'], function (_export, _context) {
     "use strict";
 
     var PLATFORM, MdcConfig, MDC_TARGET_ATTR, MDC_INIT_ATTR, pluginConfig;
@@ -26,8 +26,9 @@ System.register(['aurelia-pal', './config', './mdc-target'], function (_export, 
 
         for (var i = 0; i < elements.length; i++) {
             var item = elements.item(i);
-            item.setAttribute(MDC_TARGET_ATTR, '');
-            item.setAttribute(MDC_INIT_ATTR, pluginConfig.getComponentName(item));
+            var componentName = pluginConfig.getComponentName(item);
+            item.setAttribute(MDC_TARGET_ATTR, componentName);
+            item.setAttribute(MDC_INIT_ATTR, componentName);
         }
     }
     return {
@@ -45,6 +46,11 @@ System.register(['aurelia-pal', './config', './mdc-target'], function (_export, 
             }
 
             _export(_exportObj);
+        }, function (_helpers) {
+            var _exportObj2 = {};
+            _exportObj2.ensureAttached = _helpers.ensureAttached;
+
+            _export(_exportObj2);
         }],
         execute: function () {
             pluginConfig = void 0;

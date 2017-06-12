@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.ensureAttached = undefined;
 
 var _mdcTarget = require('./mdc-target');
 
@@ -14,6 +15,15 @@ Object.keys(_mdcTarget).forEach(function (key) {
             return _mdcTarget[key];
         }
     });
+});
+
+var _helpers = require('./helpers');
+
+Object.defineProperty(exports, 'ensureAttached', {
+    enumerable: true,
+    get: function get() {
+        return _helpers.ensureAttached;
+    }
 });
 exports.configure = configure;
 
@@ -43,7 +53,8 @@ function beforeViewCompiled(content) {
 
     for (var i = 0; i < elements.length; i++) {
         var item = elements.item(i);
-        item.setAttribute(_config.MDC_TARGET_ATTR, '');
-        item.setAttribute(_config.MDC_INIT_ATTR, pluginConfig.getComponentName(item));
+        var componentName = pluginConfig.getComponentName(item);
+        item.setAttribute(_config.MDC_TARGET_ATTR, componentName);
+        item.setAttribute(_config.MDC_INIT_ATTR, componentName);
     }
 }
