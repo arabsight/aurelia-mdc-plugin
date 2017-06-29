@@ -57,7 +57,6 @@ System.register([], function (_export, _context) {
                 'mdc-linear-progress': 'MDCLinearProgress',
                 'mdc-radio': 'MDCRadio',
                 'mdc-snackbar': 'MDCSnackbar',
-                'mdc-tab': 'MDCTab',
                 'mdc-tab-bar': 'MDCTabBar',
                 'mdc-textfield': 'MDCTextfield',
                 'mdc-simple-menu': 'MDCSimpleMenu',
