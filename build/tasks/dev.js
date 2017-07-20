@@ -1,4 +1,5 @@
 let gulp = require('gulp');
+let runSequence = require('run-sequence');
 let tools = require('aurelia-tools');
 let args = require('../args');
 
@@ -18,4 +19,14 @@ gulp.task('update-own-deps', function() {
 // and `gulp build` for each repo
 gulp.task('build-dev-env', function() {
     tools.buildDevEnv();
+});
+
+
+// calls the listed sequence of tasks in order
+gulp.task('dev-release', function(callback) {
+    return runSequence(
+        'build',
+        'lint',
+        callback
+    );
 });
