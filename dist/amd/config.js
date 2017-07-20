@@ -53,8 +53,7 @@ define(['exports'], function (exports) {
         'mdc-textfield': 'MDCTextfield',
         'mdc-simple-menu': 'MDCSimpleMenu',
         'mdc-select': 'MDCSelect',
-        'mdc-toolbar': 'MDCToolbar',
-        'mdc-form-field': 'MDCFormField'
+        'mdc-toolbar': 'MDCToolbar'
     };
 
     var MdcConfig = exports.MdcConfig = function () {
