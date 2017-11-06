@@ -1,4 +1,4 @@
-define(['exports', 'material-components-web', 'aurelia-framework', './config', './helpers'], function (exports, _materialComponentsWeb, _aureliaFramework, _config, _helpers) {
+define(['exports', 'aurelia-pal', 'material-components-web', 'aurelia-templating', 'aurelia-dependency-injection', './config'], function (exports, _aureliaPal, _materialComponentsWeb, _aureliaTemplating, _aureliaDependencyInjection, _config) {
     'use strict';
 
     Object.defineProperty(exports, "__esModule", {
@@ -14,7 +14,7 @@ define(['exports', 'material-components-web', 'aurelia-framework', './config', '
 
     var _dec, _dec2, _class;
 
-    var MdcTarget = exports.MdcTarget = (_dec = (0, _aureliaFramework.inject)(_aureliaFramework.DOM.Element, _config.MdcConfig), _dec2 = (0, _aureliaFramework.customAttribute)(_config.MDC_TARGET_ATTR), _dec(_class = _dec2(_class = function () {
+    var MdcTarget = exports.MdcTarget = (_dec = (0, _aureliaDependencyInjection.inject)(_aureliaPal.DOM.Element, _config.MdcConfig), _dec2 = (0, _aureliaTemplating.customAttribute)(_config.MDC_TARGET_ATTR), _dec(_class = _dec2(_class = function () {
         function MdcTarget(element, config) {
             _classCallCheck(this, MdcTarget);
 
@@ -32,8 +32,6 @@ define(['exports', 'material-components-web', 'aurelia-framework', './config', '
             if (!hasMdcElements) return;
 
             (0, _materialComponentsWeb.autoInit)(this.element.parentNode, function () {});
-
-            (0, _helpers.resolveAttachedPromise)();
         };
 
         return MdcTarget;

@@ -2,7 +2,6 @@ import { PLATFORM } from 'aurelia-pal';
 import { MdcConfig, MDC_TARGET_ATTR, MDC_INIT_ATTR } from './config';
 
 export * from './mdc-target';
-export { ensureAttached } from './helpers';
 
 let pluginConfig;
 

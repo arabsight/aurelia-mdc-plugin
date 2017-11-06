@@ -1,6 +1,6 @@
 {
     "name": "aurelia-mdc-plugin",
-    "version": "0.4.7",
+    "version": "0.5.0",
     "description": "Material Design Components plugin for Aurelia.",
     "keywords": [
         "aurelia",
@@ -10,7 +10,7 @@
     ],
     "scripts": {
         "dev-release": "gulp build",
-        "prepush": "gulp prepare-release --bump=patch",
+        "prepush": "gulp prepare-release --bump=minor",
         "push": "git add --all && git commit -m \"$(date)\" && git push origin master && npm publish",
         "test": "gulp test"
     },

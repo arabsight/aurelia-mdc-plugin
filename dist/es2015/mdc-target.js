@@ -1,9 +1,10 @@
 var _dec, _dec2, _class;
 
+import { DOM } from 'aurelia-pal';
 import { autoInit } from 'material-components-web';
-import { inject, customAttribute, DOM } from 'aurelia-framework';
+import { customAttribute } from 'aurelia-templating';
+import { inject } from 'aurelia-dependency-injection';
 import { MdcConfig, MDC_TARGET_ATTR } from './config';
-import { resolveAttachedPromise } from './helpers';
 
 export let MdcTarget = (_dec = inject(DOM.Element, MdcConfig), _dec2 = customAttribute(MDC_TARGET_ATTR), _dec(_class = _dec2(_class = class MdcTarget {
     constructor(element, config) {
@@ -19,7 +20,5 @@ export let MdcTarget = (_dec = inject(DOM.Element, MdcConfig), _dec2 = customAtt
         if (!hasMdcElements) return;
 
         autoInit(this.element.parentNode, () => {});
-
-        resolveAttachedPromise();
     }
 }) || _class) || _class);

@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['material-components-web', 'aurelia-framework', './config', './helpers'], function (_export, _context) {
+System.register(['aurelia-pal', 'material-components-web', 'aurelia-templating', 'aurelia-dependency-injection', './config'], function (_export, _context) {
     "use strict";
 
-    var autoInit, inject, customAttribute, DOM, MdcConfig, MDC_TARGET_ATTR, resolveAttachedPromise, _dec, _dec2, _class, MdcTarget;
+    var DOM, autoInit, customAttribute, inject, MdcConfig, MDC_TARGET_ATTR, _dec, _dec2, _class, MdcTarget;
 
     function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) {
@@ -12,17 +12,17 @@ System.register(['material-components-web', 'aurelia-framework', './config', './
     }
 
     return {
-        setters: [function (_materialComponentsWeb) {
+        setters: [function (_aureliaPal) {
+            DOM = _aureliaPal.DOM;
+        }, function (_materialComponentsWeb) {
             autoInit = _materialComponentsWeb.autoInit;
-        }, function (_aureliaFramework) {
-            inject = _aureliaFramework.inject;
-            customAttribute = _aureliaFramework.customAttribute;
-            DOM = _aureliaFramework.DOM;
+        }, function (_aureliaTemplating) {
+            customAttribute = _aureliaTemplating.customAttribute;
+        }, function (_aureliaDependencyInjection) {
+            inject = _aureliaDependencyInjection.inject;
         }, function (_config) {
             MdcConfig = _config.MdcConfig;
             MDC_TARGET_ATTR = _config.MDC_TARGET_ATTR;
-        }, function (_helpers) {
-            resolveAttachedPromise = _helpers.resolveAttachedPromise;
         }],
         execute: function () {
             _export('MdcTarget', MdcTarget = (_dec = inject(DOM.Element, MdcConfig), _dec2 = customAttribute(MDC_TARGET_ATTR), _dec(_class = _dec2(_class = function () {
@@ -43,8 +43,6 @@ System.register(['material-components-web', 'aurelia-framework', './config', './
                     if (!hasMdcElements) return;
 
                     autoInit(this.element.parentNode, function () {});
-
-                    resolveAttachedPromise();
                 };
 
                 return MdcTarget;

@@ -51,6 +51,7 @@ System.register([], function (_export, _context) {
                 'mdc-dialog': 'MDCDialog',
                 'mdc-persistent-drawer': 'MDCPersistentDrawer',
                 'mdc-temporary-drawer': 'MDCTemporaryDrawer',
+                'mdc-form-field': 'MDCFormField',
                 'mdc-ripple-surface': 'MDCRipple',
                 'mdc-grid-list': 'MDCGridList',
                 'mdc-icon-toggle': 'MDCIconToggle',
@@ -61,6 +62,7 @@ System.register([], function (_export, _context) {
                 'mdc-textfield': 'MDCTextfield',
                 'mdc-simple-menu': 'MDCSimpleMenu',
                 'mdc-select': 'MDCSelect',
+                'mdc-slider': 'MDCSlider',
                 'mdc-toolbar': 'MDCToolbar'
             };
 

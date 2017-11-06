@@ -2,14 +2,13 @@ import { PLATFORM } from 'aurelia-pal';
 import { MdcConfig, MDC_TARGET_ATTR, MDC_INIT_ATTR } from './config';
 
 export * from './mdc-target';
-export { ensureAttached } from './helpers';
 
 let pluginConfig;
 
 export function configure(config, callback) {
     pluginConfig = config.container.get(MdcConfig);
 
-    if (callback !== undefined && typeof(callback) === 'function') {
+    if (callback !== undefined && typeof (callback) === 'function') {
         callback(pluginConfig);
     }
 

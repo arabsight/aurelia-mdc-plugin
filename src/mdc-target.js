@@ -1,7 +1,8 @@
+import { DOM } from 'aurelia-pal';
 import { autoInit } from 'material-components-web';
-import { inject, customAttribute, DOM } from 'aurelia-framework';
+import { customAttribute } from 'aurelia-templating';
+import { inject } from 'aurelia-dependency-injection';
 import { MdcConfig, MDC_TARGET_ATTR } from './config';
-import { resolveAttachedPromise } from './helpers';
 
 @inject(DOM.Element, MdcConfig)
 @customAttribute(MDC_TARGET_ATTR)
@@ -18,8 +19,6 @@ export class MdcTarget {
 
         if (!hasMdcElements) return;
 
-        autoInit(this.element.parentNode, () => {});
-
-        resolveAttachedPromise();
+        autoInit(this.element.parentNode, () => { });
     }
 }

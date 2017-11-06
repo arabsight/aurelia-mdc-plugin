@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['aurelia-pal', './config', './mdc-target', './helpers'], function (_export, _context) {
+System.register(['aurelia-pal', './config', './mdc-target'], function (_export, _context) {
     "use strict";
 
     var PLATFORM, MdcConfig, MDC_TARGET_ATTR, MDC_INIT_ATTR, pluginConfig;
@@ -46,11 +46,6 @@ System.register(['aurelia-pal', './config', './mdc-target', './helpers'], functi
             }
 
             _export(_exportObj);
-        }, function (_helpers) {
-            var _exportObj2 = {};
-            _exportObj2.ensureAttached = _helpers.ensureAttached;
-
-            _export(_exportObj2);
         }],
         execute: function () {
             pluginConfig = void 0;
