@@ -51,7 +51,7 @@ define(['exports'], function (exports) {
         'mdc-radio': 'MDCRadio',
         'mdc-snackbar': 'MDCSnackbar',
         'mdc-tab-bar': 'MDCTabBar',
-        'mdc-text-field': 'MDCTextfield',
+        'mdc-text-field': 'MDCTextField',
         'mdc-simple-menu': 'MDCSimpleMenu',
         'mdc-select': 'MDCSelect',
         'mdc-slider': 'MDCSlider',
