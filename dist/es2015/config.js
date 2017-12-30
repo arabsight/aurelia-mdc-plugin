@@ -14,7 +14,7 @@ let MDC_COMPONENTS = {
     'mdc-radio': 'MDCRadio',
     'mdc-snackbar': 'MDCSnackbar',
     'mdc-tab-bar': 'MDCTabBar',
-    'mdc-textfield': 'MDCTextfield',
+    'mdc-text-field': 'MDCTextfield',
     'mdc-simple-menu': 'MDCSimpleMenu',
     'mdc-select': 'MDCSelect',
     'mdc-slider': 'MDCSlider',
