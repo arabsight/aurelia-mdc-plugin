@@ -11,7 +11,7 @@ npm i -S material-components-web
 npm i -S aurelia-mdc-plugin
 ```
 
-- Bundle:
+- Bundle with Aurelia-CLI (requirejs):
 
 add mdc & plugin to one of your bundle's dependencies in *aurelia.json*.
 
@@ -39,6 +39,12 @@ export function configure(aurelia) {
     aurelia.use.plugin('aurelia-mdc-plugin');
     ...
 }
+```
+
+with WebPack:
+
+```js
+aurelia.use.plugin(PLATFORM.moduleName('aurelia-mdc-plugin'));
 ```
 
 - import the css:

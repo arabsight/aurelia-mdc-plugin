@@ -60,7 +60,7 @@ System.register([], function (_export, _context) {
                 'mdc-snackbar': 'MDCSnackbar',
                 'mdc-tab-bar': 'MDCTabBar',
                 'mdc-text-field': 'MDCTextField',
-                'mdc-simple-menu': 'MDCSimpleMenu',
+                'mdc-menu': 'MDCMenu',
                 'mdc-select': 'MDCSelect',
                 'mdc-slider': 'MDCSlider',
                 'mdc-toolbar': 'MDCToolbar'
